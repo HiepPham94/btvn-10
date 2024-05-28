@@ -19,7 +19,7 @@
 
         */
        
-       let input = prompt ("Hãy nhập giá trị bạn muốn để tìm ra ký tự xuất hiện nhiều nhất").split("");
+        let input = prompt ("Hãy nhập giá trị bạn muốn để tìm ra ký tự xuất hiện nhiều nhất").split("");
         let check = [];
              for (let i = 0; i < input.length; i++) {
                 let count = 1;
@@ -33,18 +33,14 @@
                 check.push(count);
 
             }
-        console.log(check);
     
-        let a = check[0];
+        let b = check[0];
         let number = 0;
         for (let h = 1; h < check.length; h++) {
-            if (check[0]<check[h]) {
-                a = check[h];
+            if (b<check[h]) {
+                b =check[h];
                 number = h;
-            } else {
-                a = check[0];
-                number = 0;
-            }
+        }
         }
         console.log(`ký tự ${input[number]} xuất hiện nhiều nhất là ${check[number]} lần`);
 
@@ -64,8 +60,15 @@
         console.log(input2);
 
         // bài 3
-        let test = prompt ("Hãy nhập một đoạn văn bản bạn thích").split("");
-        console.log();
+        let test = prompt ("Hãy nhập một đoạn văn bản bạn thích").toLowerCase();
+        let a = test.split("");
+        for (let i = 0; i < test.length; i++) {
+            a.splice(0,1,a[0].toLocaleUpperCase());
+            if (a[i]===" ") {
+                a.splice(i+1,1,a[i+1].toLocaleUpperCase());
+            }
+        }
+        console.log(a.join(``));
 
 
 
