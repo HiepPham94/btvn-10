@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // Bài 1. 
+       /* test thêm giá trị vào mảng
+              let a = prompt ("Hãy nhập bất kỳ giá trị nào bạn thích, nếu muốn dừng lại ấn ok");
+          let input = [];
+          while (a!=="ok") {
+              input.push(a);
+              a = prompt ("Hãy nhập bất kỳ giá trị nào bạn thích, nếu muốn dừng lại ấn ok");
+          }
+          console.log(input);
+
+        */
+       
+       let input = prompt ("Hãy nhập giá trị bạn muốn để tìm ra ký tự xuất hiện nhiều nhất").split("");
+        let check = [];
+             for (let i = 0; i < input.length; i++) {
+                let count = 1;
+               for (let j = i + 1; j < input.length; j++) {
+                   if (input[j]===input[i]) {
+                        count = count + 1;
+                        input.splice(j,1);
+                        j = j - 1;
+                   } 
+               }
+                check.push(count);
+
+            }
+        console.log(check);
+    
+        let a = check[0];
+        let number = 0;
+        for (let h = 1; h < check.length; h++) {
+            if (check[0]<check[h]) {
+                a = check[h];
+                number = h;
+            } else {
+                a = check[0];
+                number = 0;
+            }
+        }
+        console.log(`ký tự ${input[number]} xuất hiện nhiều nhất là ${check[number]} lần`);
+
+
+        // bài 2.
+
+        let input2 = prompt ("Hãy nhập giá trị bạn muốn để tìm ra ký tự xuất hiện nhiều nhất").split("");
+             for (let i = 0; i < input2.length; i++) {
+               for (let j = i + 1; j < input2.length; j++) {
+                   if (input2[j]===input2[i]) {
+                        input2.splice(j,1);
+                        j = j - 1;
+                   } 
+               
+            }
+             }
+        console.log(input2);
+
+        // bài 3
+        let test = prompt ("Hãy nhập một đoạn văn bản bạn thích").split("");
+        console.log();
+
+
+
+
+        
+    </script>
+</body>
+</html>
